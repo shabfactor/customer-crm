@@ -16,7 +16,7 @@ export default function HeaderContent() {
       <Menu.Item key={`${uniqueId()}`} onClick={() => dispatch(logout())}>
         logout
       </Menu.Item>
-      <Menu.Item key={`${uniqueId()}`}>
+      {/* <Menu.Item key={`${uniqueId()}`}>
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -24,8 +24,8 @@ export default function HeaderContent() {
         >
           2nd menu item
         </a>
-      </Menu.Item>
-      <Menu.Item key={`${uniqueId()}`}>
+      </Menu.Item> */}
+      {/* <Menu.Item key={`${uniqueId()}`}>
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export default function HeaderContent() {
         >
           3rd menu item
         </a>
-      </Menu.Item>
+      </Menu.Item> */}
     </Menu>
   );
   return (

@@ -24,7 +24,7 @@ const products = JSON.parse(
 
 async function loadData() {
   try {
-    await db.collection('product').insertMany(products);
+    await db.collection('products').insertMany(products);
     console.log("👍👍👍👍👍👍👍👍 Done!");
     process.exit();
   } catch (e) {
@@ -58,7 +58,7 @@ async function createAdmin() {
   }
 }
 
-createAdmin();
+//createAdmin();
 loadData();
 //  if (process.argv.includes("--delete")) {
 //   deleteData();
