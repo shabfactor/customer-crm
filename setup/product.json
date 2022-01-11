@@ -1,0 +1,32 @@
+[
+    {
+        "enabled": true,
+        "productName": "zbook",
+        "description": "hp laptop new",
+        "price": 3000,
+        "status":"available"
+    },
+
+    {
+        "enabled": true,
+        "productName": "apple mac",
+        "description": "mac 16'inch new",
+        "price": 4000,
+        "status":"available"
+    },
+    {
+        "enabled": true,
+        "productName": "sony viao",
+        "description": "sony laptop new",
+        "price": 5000,
+        "status":"available"
+    },
+
+    {
+        "enabled": true,
+        "productName": "apple ipad",
+        "description": "mac 8'inch new",
+        "price": 1700,
+        "status":"available"
+    }
+]
