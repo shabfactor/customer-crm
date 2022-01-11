@@ -12,13 +12,6 @@ Don't forget please to ⭐ this repo if you like this Starter Antd Admin!
 
 I build Starter Crm App based on mern stack (Express.js / MongoDb / React / Redux / AntD) with generic crud and auth , admin management .
 
-**Live App Demo** : [https://antd-admin.idurar.net/](https://antd-admin.idurar.net/)
-
-`username : admin@demon.com
-password : admin123`
-
-
-
 ## App Features :
 
 ### Backend :
