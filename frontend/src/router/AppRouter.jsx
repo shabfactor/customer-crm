@@ -11,7 +11,9 @@ const Dashboard = lazy(() =>
 const Admin = lazy(() =>
   import(/*webpackChunkName:'AdminPage'*/ "@/pages/Admin")
 );
-
+const Quote = lazy(() =>
+  import(/*webpackChunkName:'QuotePage'*/ "@/pages/Quote")
+);
 const Customer = lazy(() =>
   import(/*webpackChunkName:'CustomerPage'*/ "@/pages/Customer")
 );
@@ -46,6 +48,7 @@ export default function AppRouter() {
             exact
           />
           <PrivateRoute component={Lead} path="/lead" exact />
+          <PrivateRoute component={Quote} path="/quote" exact />
           <PrivateRoute component={Product} path="/product" exact />
           <PrivateRoute component={Admin} path="/admin" exact />
 

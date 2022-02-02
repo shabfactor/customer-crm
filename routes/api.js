@@ -8,6 +8,7 @@ const clientController = require("../controllers/clientController");
 
 const leadController = require("../controllers/leadController");
 const productController = require("../controllers/productController");
+const quoteController = require("../controllers/quoteController");
 
 //_______________________________ Admin management_______________________________
 
@@ -39,15 +40,19 @@ router.route("/lead/delete/:id").delete(catchErrors(leadController.delete));
 router.route("/lead/search").get(catchErrors(leadController.search));
 router.route("/lead/list").get(catchErrors(leadController.list));
 
+//_____________________________________ API for quotes ___________________________
+router.route("/quote/create").post(catchErrors(quoteController.create));
+router.route("/quote/read/:id").get(catchErrors(quoteController.read));
+router.route("/quote/update/:id").patch(catchErrors(quoteController.update));
+router.route("/quote/delete/:id").delete(catchErrors(quoteController.delete));
+router.route("/quote/search").get(catchErrors(quoteController.search));
+router.route("/quote/list").get(catchErrors(quoteController.list));
+
 //_____________________________________ API for products ___________________________
 router.route("/product/create").post(catchErrors(productController.create));
 router.route("/product/read/:id").get(catchErrors(productController.read));
-router
-  .route("/product/update/:id")
-  .patch(catchErrors(productController.update));
-router
-  .route("/product/delete/:id")
-  .delete(catchErrors(productController.delete));
+router.route("/product/update/:id").patch(catchErrors(productController.update));
+router.route("/product/delete/:id").delete(catchErrors(productController.delete));
 router.route("/product/search").get(catchErrors(productController.search));
 router.route("/product/list").get(catchErrors(productController.list));
 

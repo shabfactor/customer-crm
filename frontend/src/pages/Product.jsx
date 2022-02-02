@@ -1,5 +1,4 @@
 import React from "react";
-
 import CrudModule from "@/modules/CrudModule";
 import ProductForm from "@/forms/ProductForm";
 

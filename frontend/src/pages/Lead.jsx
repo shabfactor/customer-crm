@@ -1,5 +1,4 @@
 import React from "react";
-
 import CrudModule from "@/modules/CrudModule";
 import LeadForm from "@/forms/LeadForm";
 
@@ -54,6 +53,9 @@ function Lead() {
     {
       title: "Client",
       dataIndex: "client",
+      sorter: {
+        compare: (a, b) => a.client.length - b.client.length,
+      },
     },
     {
       title: "phone",
@@ -63,6 +65,9 @@ function Lead() {
     {
       title: "Budget",
       dataIndex: "budget",
+      sorter: {
+        compare: (a, b) => a.math - b.math,
+      },
     },
   ];
 
