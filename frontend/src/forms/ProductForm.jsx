@@ -25,6 +25,17 @@ export default function ProductForm({ isUpdateForm = false }) {
         ]}
       >
         <Input />
+        </Form.Item>
+      <Form.Item
+        label="Quantity"
+        name="quantity"
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input />
       </Form.Item>
       <Form.Item
         label="Price"

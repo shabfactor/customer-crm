@@ -10,6 +10,7 @@ function Quote() {
     outputValue: "_id",
   };
 
+
   const panelTitle = "Quote Panel";
   const dataTableTitle = "Quote Lists";
   const entityDisplayLabels = ["name"];
@@ -24,10 +25,6 @@ function Quote() {
       dataIndex: "lastName",
     },
     {
-      title: "Date",
-      dataIndex: "date",
-    },
-    {
       title: "Phone",
       dataIndex: "phone",
     },
@@ -35,14 +32,17 @@ function Quote() {
       title: "Email",
       dataIndex: "email",
     },
-
+    {
+      title: "Date",
+      dataIndex: "date",
+    },
+    {
+      title: "Product",
+      dataIndex: "product",
+    },
     {
       title: "Quantity",
       dataIndex: "quantity",
-    },
-    {
-      title: "Status",
-      dataIndex: "status",
     },
     {
       title: "Request",
@@ -53,20 +53,10 @@ function Quote() {
     {
       title: "First Name",
       dataIndex: "firstName",
-      sorter: {
-        compare: (a, b) => a.client.length - b.client.length,
-      },
     },
     {
       title: "Last Name",
       dataIndex: "lastName",
-      sorter: {
-        compare: (a, b) => a.client.length - b.client.length,
-      },
-    },
-    {
-      title: "Date",
-      dataIndex: "date",
     },
     {
       title: "Phone",
@@ -74,11 +64,27 @@ function Quote() {
     },
 
     {
+      title: "Email",
+      dataIndex: "email",
+    },
+    {
+      title: "Date",
+      dataIndex: "date",
+    },
+    {
+      title: "Product",
+      dataIndex: "product",
+    },
+    {
       title: "Quantity",
       dataIndex: "quantity",
       sorter: {
         compare: (a, b) => a.math - b.math,
       },
+    },
+    {
+      title: "Request",
+      dataIndex: "request",
     },
   ];
 

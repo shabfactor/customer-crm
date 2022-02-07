@@ -1,8 +1,31 @@
 import React from "react";
-import { Form, Input } from "antd";
+import { Dropdown, Menu, Form, Input, Select } from "antd";
 import { DatePicker } from "@/components/CustomAntd";
+import {request} from "../request";
+import {DownOutlined, UserOutlined} from "@ant-design/icons";
+import useFetch from "@/hooks/useFetch";
 
 export default function QuoteForm({ isUpdateForm = false }) {
+
+  function handleChange(value) {
+    console.log(`selected ${value}`);
+  }
+  const asyncList = () => {
+    return request.list("product");
+  };
+  const { result, isSuccess } = useFetch(asyncList);
+  
+  const returnItems = () => {
+    if (isSuccess && result) return result;
+    return [];
+  };
+  const data = returnItems();
+  let items = [];
+      for(var key in data){
+        if (data.hasOwnProperty(key)){
+          items.push(data[key].productName)
+        }
+      }
   return (
     <>
       <Form.Item
@@ -30,7 +53,7 @@ export default function QuoteForm({ isUpdateForm = false }) {
         <Input />
       </Form.Item>
       <Form.Item
-        name="Phone"
+        name="phone"
         label="phone"
         rules={[
           {
@@ -42,7 +65,7 @@ export default function QuoteForm({ isUpdateForm = false }) {
         <Input />
       </Form.Item>
       <Form.Item
-        name="Email"
+        name="email"
         label="E-mail"
         rules={[
           {
@@ -68,6 +91,27 @@ export default function QuoteForm({ isUpdateForm = false }) {
         ]}
       >
         <DatePicker format={"DD/MM/YYYY"} />
+      </Form.Item>
+        <Form.Item 
+        direction="vertical"
+        label="Product"
+        name="product"
+        rules={[
+          {
+            required: true,
+            message: "Please select product",
+          },
+        ]}
+        >
+        <Select defaultValue="select a product" style={{ width: 220 }} onChange={handleChange} allowClear>
+          {items.map(item => (
+            <Option key={item} value={item} label={item}>
+              <div>
+                {item}
+              </div>
+            </Option>
+          ))}
+       </Select>
       </Form.Item>
       <Form.Item
         label="Quantity"

@@ -24,6 +24,10 @@ function Product() {
       dataIndex: "description",
     },
     {
+      title: "Quantity",
+      dataIndex: "quantity",
+    },
+    {
       title: "Price",
       dataIndex: "price",
     },
@@ -36,6 +40,10 @@ function Product() {
     {
       title: "Description",
       dataIndex: "description",
+    },
+    {
+      title: "Quantity",
+      dataIndex: "quantity",
     },
     {
       title: "Price",

@@ -16,24 +16,6 @@ export default function HeaderContent() {
       <Menu.Item key={`${uniqueId()}`} onClick={() => dispatch(logout())}>
         logout
       </Menu.Item>
-      {/* <Menu.Item key={`${uniqueId()}`}>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="http://www.taobao.com/"
-        >
-          2nd menu item
-        </a>
-      </Menu.Item> */}
-      {/* <Menu.Item key={`${uniqueId()}`}>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="http://www.tmall.com/"
-        >
-          3rd menu item
-        </a>
-      </Menu.Item> */}
     </Menu>
   );
   return (

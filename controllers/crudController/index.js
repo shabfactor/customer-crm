@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 
 exports.crudController = (modelName) => {
   const Model = mongoose.model(modelName);
-  console.log(Model);
   let methods = {};
 
   methods.create = async (req, res) => {
