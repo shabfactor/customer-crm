@@ -21,12 +21,12 @@ function Customer() {
       dataIndex: "company",
     },
     {
-      title: "Manager Surname",
-      dataIndex: "surname",
-    },
-    {
       title: "Manager Name",
       dataIndex: "name",
+    },
+    {
+      title: "Manager Surname",
+      dataIndex: "surname",
     },
     {
       title: "Email",
@@ -43,12 +43,12 @@ function Customer() {
       dataIndex: "company",
     },
     {
-      title: "Manager Surname",
-      dataIndex: "surname",
-    },
-    {
       title: "Manager Name",
       dataIndex: "name",
+    },
+    {
+      title: "Manager Surname",
+      dataIndex: "surname",
     },
     {
       title: "Email",

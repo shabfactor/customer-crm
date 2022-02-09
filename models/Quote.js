@@ -6,42 +6,42 @@ const quoteSchema = new mongoose.Schema({
     type: String,
     lowercase: true,
     trim: true,
-    //required: true,
+    required: true,
   },
   lastName: {
     type: String,    
     lowercase: true,
     trim: true,
-   // required: true,
+    required: true,
   },
   date: {
    type: String,
-    //  required: true,
+   required: true,
   },
   phone: {
    type: String,
-  //  required: true,
+   required: true,
   },
   email: {
     type: String,
     lowercase: true,
     trim: true,
-   // required: true,
+    required: true,
   },
   product: {
     type: String,
     lowercase: true,
     trim: true,
-    //required: true,
+    required: true,
 
   },
   quantity: {
     type: Number,
-  //  required: true,
+   required: true,
   },
   request: {
     type: String,
-  //  required: true,
+    required: true,
   },
   created: {
     type: Date,

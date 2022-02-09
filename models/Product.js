@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    default: "available",
+    default: "Available",
   },
 });
 

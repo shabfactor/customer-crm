@@ -16,23 +16,24 @@ export default function CreateForm({ config, formElements }) {
   const { panel, collapsedBox, readBox } = crudContextAction;
   const [form] = Form.useForm();
   const onSubmit = (fieldsValue) => {
-    if (fieldsValue) {
-      if (fieldsValue.birthday) {
-        fieldsValue = {
-          ...fieldsValue,
-          birthday: fieldsValue["birthday"].format("DD/MM/YYYY"),
-        };
-      }
-      if (fieldsValue.date) {
-        fieldsValue = {
-          ...fieldsValue,
-          date: fieldsValue["date"].format("DD/MM/YYYY"),
-        };
-      }
-    }
+    // if (fieldsValue) {                                         //fix this code 
+    //   if (fieldsValue.birthday) {
+    //     fieldsValue = {
+    //       ...fieldsValue,
+    //       birthday: fieldsValue["birthday"].format("DD/MM/YYYY"),
+    //     };
+    //   }
+    //   if (fieldsValue.date) {
+    //     fieldsValue = {
+    //       ...fieldsValue,
+    //       date: fieldsValue["date"].format("DD/MM/YYYY"),
+    //     };
+    //   }
+    // }
 
-    dispatch(crud.create(entity, fieldsValue));
+    // dispatch(crud.create(entity, fieldsValue));
   };
+
 
   useEffect(() => {
     if (isSuccess) {

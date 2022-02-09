@@ -69,6 +69,10 @@ function Lead() {
         compare: (a, b) => a.math - b.math,
       },
     },
+    {
+      title: "Status",
+      dataIndex: "status",
+    },
   ];
 
   const ADD_NEW_ENTITY = "Add new lead";

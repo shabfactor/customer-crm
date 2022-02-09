@@ -110,7 +110,7 @@ export default function Dashboard() {
       title: "Status",
       dataIndex: "status",
       render: (status) => {
-        let color = status === "pending" ? "volcano" : "green";
+        let color = status === ("Pending" || "Close Won" || "Close Lost") ? "green" : "volcano";   //change this to fix code
 
         return <Tag color={color}>{status.toUpperCase()}</Tag>;
       },
@@ -131,7 +131,7 @@ export default function Dashboard() {
       title: "Status",
       dataIndex: "status",
       render: (status) => {
-        let color = status === "available" ? "green" : "volcano";
+        let color = status === ("Available" || "Limited") ? "green" : "volcano";  //change this to fix code
 
         return <Tag color={color}>{status.toUpperCase()}</Tag>;
       },
@@ -144,19 +144,19 @@ export default function Dashboard() {
         <TopCard
           title={"Leads"}
           tagColor={"cyan"}
-          prefix={"This month"}
+          prefix={"Total leads"}
           tagContent={"34 000 $"}
         />
         <TopCard
           title={"Order"}
           tagColor={"purple"}
-          prefix={"This month"}
+          prefix={"Total orders"}
           tagContent={"34 000 $"}
         />
         <TopCard
           title={"Payment"}
           tagColor={"green"}
-          prefix={"This month"}
+          prefix={"Total payments"}
           tagContent={"34 000 $"}
         />
         <TopCard

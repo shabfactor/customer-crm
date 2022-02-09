@@ -53,6 +53,9 @@ function Quote() {
     {
       title: "First Name",
       dataIndex: "firstName",
+      sorter: {
+        compare: (a, b) => a.length - b.length,
+      },
     },
     {
       title: "Last Name",
@@ -60,7 +63,7 @@ function Quote() {
     },
     {
       title: "Phone",
-      dataIndex: "phone",
+      dataIndex: "Phone",            //change this field to fix
     },
 
     {

@@ -2,7 +2,6 @@ import React from "react";
 import { Dropdown, Menu, Form, Input, Select } from "antd";
 import { DatePicker } from "@/components/CustomAntd";
 import {request} from "../request";
-import {DownOutlined, UserOutlined} from "@ant-design/icons";
 import useFetch from "@/hooks/useFetch";
 
 export default function QuoteForm({ isUpdateForm = false }) {
@@ -11,7 +10,7 @@ export default function QuoteForm({ isUpdateForm = false }) {
     console.log(`selected ${value}`);
   }
   const asyncList = () => {
-    return request.list("product");
+    return request.list("products");            //change this to fix code
   };
   const { result, isSuccess } = useFetch(asyncList);
   
@@ -41,7 +40,7 @@ export default function QuoteForm({ isUpdateForm = false }) {
         <Input />
       </Form.Item>
       <Form.Item
-        label="Last Name"
+        label="last Name"
         name="lastName"
         rules={[
           {
@@ -53,7 +52,7 @@ export default function QuoteForm({ isUpdateForm = false }) {
         <Input />
       </Form.Item>
       <Form.Item
-        name="phone"
+        name="Phone"
         label="phone"
         rules={[
           {
@@ -103,7 +102,7 @@ export default function QuoteForm({ isUpdateForm = false }) {
           },
         ]}
         >
-        <Select defaultValue="select a product" style={{ width: 220 }} onChange={handleChange} allowClear>
+        <Select placeholder="selact a product" style={{ width: 220 }} onChange={handleChange} allowClear>
           {items.map(item => (
             <Option key={item} value={item} label={item}>
               <div>

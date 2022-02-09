@@ -5,7 +5,7 @@ export default function CustomerForm({ isUpdateForm = false }) {
   return (
     <>
       <Form.Item
-        label="company Name"
+        label="Company Name"
         name="company"
         rules={[
           {
@@ -17,8 +17,8 @@ export default function CustomerForm({ isUpdateForm = false }) {
         <Input />
       </Form.Item>
       <Form.Item
-        label="Surname"
-        name="surname"
+        label="Name"
+        name="name"
         rules={[
           {
             required: true,
@@ -34,8 +34,8 @@ export default function CustomerForm({ isUpdateForm = false }) {
         <Input />
       </Form.Item>
       <Form.Item
-        label="Name"
-        name="name"
+        label="Surname"
+        name="surname"
         rules={[
           {
             required: true,
