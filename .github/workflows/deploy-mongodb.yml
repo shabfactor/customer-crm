@@ -1,0 +1,64 @@
+
+name: Deploy MongoDb
+
+on:
+  workflow_dispatch:
+    inputs:
+      ac-user:
+        description: "AC service account user"
+        required: true
+        default: ""
+      ac-pwd:
+        description: "AC service account password"
+        required: true
+        default: ""
+      mongo-user:
+        description: "MongoDB username"
+        required: true
+        default: "admin"
+      mongo-pwd:
+        description: "MongoDb password"
+        required: true
+        default: ""
+      mongo-name:
+        description: "Name of the mongodb app"
+        required: true
+        default: "customer-crm"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: "ReplaceToken: MONGO_INITDB_ROOT_USERNAME"
+        uses: ./.github/actions/replace-token
+        with:
+          filename: "vars.yml"
+          name: "MONGO_INITDB_ROOT_USERNAME"
+          value: ${{ github.event.inputs.mongo-user }}
+          
+      - name: "ReplaceToken: MONGO_INITDB_ROOT_PASSWORD"
+        uses: ./.github/actions/replace-token
+        with:
+          filename: "vars.yml"
+          name: "MONGO_INITDB_ROOT_PASSWORD"
+          value: ${{ github.event.inputs.mongo-pwd }}
+          
+      - name: "ReplaceToken: MONGODB_APP_NAME"
+        uses: ./.github/actions/replace-token
+        with:
+          filename: "vars.yml"
+          name: "MONGODB_APP_NAME"
+          value: ${{ github.event.inputs.mongo-name }}
+
+      - name: Deploy to AC
+        uses: ./.github/actions/deploy-to-ac
+        env:
+          CF_USERNAME: ${{ github.event.inputs.ac-user }}
+          CF_PASSWORD: ${{ github.event.inputs.ac-pwd }}
+        with:
+          var-file: "vars.yml"
+          space: "GradFreshstart"
+          manifest: "manifest-mongodb.yml"
