@@ -1,0 +1,16 @@
+---
+applications:
+  - name: ((CUSTOMER_CRM_APP_NAME))-web
+    memory: 1GB
+    disk_quota: 1G
+    instances: 1
+    routes:
+      - route: customer-crm.app.ap.assurity.cloud
+    health-check-type: none
+    buildpacks:
+      - nodejs_buildpack
+    command: "yarn start"
+    env:
+      NODE_ENV: development
+      NPM_CONFIG_PRODUCTION: false
+      API_BASE_URL: 'https://customer-crm-api.app.ap.assurity.cloud/api/'
