@@ -1,0 +1,21 @@
+---
+applications:
+  - name: ((CUSTOMER_CRM_APP_NAME))-api
+    memory: 1GB
+    disk_quota: 1G
+    instances: 1
+    routes:
+      - route: customer-crm-api.apps.internal
+    health-check-type: none
+    buildpacks:
+      - nodejs_buildpack
+    env:
+      DATABASE: ((MONGO_DATABASE))
+      NODE_ENV: 'production'
+      SECRET: 'secret'
+      KEY: 'shaibal'
+      JWT_SCHEME: 'jwt'
+      JWT_TOKEN_PREFIX: 'Bearer'
+      JWT_SECRET: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im9sYXR1bmRlZ2FydWJhQGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoiT2xhdHVuZGUgR2FydWJhIiwiX2lkIjoiNThmMjYzNDdiMTY1YzUxODM1NDMxYTNkIiwiaWF0IjoxNDkyMjgwMTk4fQ.VcMpybz08cB5PsrMSr25En4_EwCGWZVFgciO4M-3ENE'
+      JWT_TOKEN_EXPIRATION: '18000000'
+      JWT_TOKEN_HASH_ALGO: 'SHA-256'

@@ -1,0 +1,13 @@
+---
+applications:
+  - name: mongodb-((MONGODB_APP_NAME))
+    memory: 2G
+    disk_quota: 2G
+    instances: 1
+    docker:
+      image: mongo:5.0
+    no-route: true
+    health-check-type: none
+    env:
+      MONGO_INITDB_ROOT_PASSWORD: ((MONGO_INITDB_ROOT_PASSWORD))
+      MONGO_INITDB_ROOT_USERNAME: ((MONGO_INITDB_ROOT_USERNAME))

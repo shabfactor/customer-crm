@@ -1,0 +1,61 @@
+
+name: Deploy CustomerCRM api
+
+on:
+  workflow_dispatch:
+    inputs:
+      ac-user:
+        description: "AC service account user"
+        required: true
+        default: ""
+      ac-pwd:
+        description: "AC service account password"
+        required: true
+        default: ""
+      app-name:
+        description: "Name of the app"
+        required: true
+        default: "customer-crm"
+      mongodb-url:
+        description: "The MongoDB URL"
+        required: true
+        default: "mongodb://localhost:27017"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: "ReplaceToken: CUSTOMER_CRM_APP_NAME"
+        uses: ./.github/actions/replace-token
+        with:
+          filename: "vars.yml"
+          name: "CUSTOMER_CRM_APP_NAME"
+          value: ${{ github.event.inputs.app-name }}
+
+      - name: "ReplaceToken: MONGO_DATABASE"
+        uses: ./.github/actions/replace-token
+        with:
+          filename: "vars.yml"
+          name: "MONGO_DATABASE"
+          value: ${{ github.event.inputs.mongodb-url }}
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+      
+      - run: npm ci
+
+      - name: Deploy to AC
+        uses: ./.github/actions/deploy-to-ac
+        env:
+          CF_USERNAME: ${{ github.event.inputs.ac-user }}
+          CF_PASSWORD: ${{ github.event.inputs.ac-pwd }}
+        with:
+          var-file: "vars.yml"
+          space: "GradFreshstart"
+          manifest: "manifest.yml"
