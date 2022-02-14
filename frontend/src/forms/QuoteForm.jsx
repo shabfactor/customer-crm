@@ -52,8 +52,8 @@ export default function QuoteForm({ isUpdateForm = false }) {
         <Input />
       </Form.Item>
       <Form.Item
-        name="Phone"
-        label="phone"
+        name="phone"
+        label="Phone"
         rules={[
           {
             required: true,

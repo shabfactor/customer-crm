@@ -28,8 +28,8 @@ function onSearch(val) {
         <Input />
       </Form.Item>
       <Form.Item
-        name="phone"
         label="Phone"
+        name="phone"
         rules={[
           {
             required: true,

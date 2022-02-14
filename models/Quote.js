@@ -30,8 +30,6 @@ const quoteSchema = new mongoose.Schema({
   },
   product: {
     type: String,
-    lowercase: true,
-    trim: true,
     required: true,
 
   },
