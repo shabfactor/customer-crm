@@ -63,7 +63,7 @@ function Quote() {
     },
     {
       title: "Phone",
-      dataIndex: "Phone",            //change this field to fix
+      dataIndex: "phone",            //change this field to fix
     },
 
     {
