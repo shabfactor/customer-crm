@@ -1,0 +1,23 @@
+name: "Replace token"
+description: "replaces token in a file"
+inputs:
+  filename:
+    description: "name of the token"
+    required: true
+    default: ""
+  name:
+    description: "name of the token"
+    required: true
+    default: ""
+  value:
+    description: "value of the token"
+    required: true
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - name: Replace token
+      run: |
+        export escaped=$(echo ${{ inputs.value }} | sed 's/\//\\\//g')
+        find ${{ inputs.filename }} -type f -exec sed -i ''s/#{${{ inputs.name }}}#/$escaped/g'' {} \;
+      shell: bash
