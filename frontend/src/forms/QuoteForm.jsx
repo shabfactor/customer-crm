@@ -10,7 +10,7 @@ export default function QuoteForm({ isUpdateForm = false }) {
     console.log(`selected ${value}`);
   }
   const asyncList = () => {
-    return request.list("products");            //change this to fix code
+    return request.list("product");            //change this to fix code
   };
   const { result, isSuccess } = useFetch(asyncList);
   
